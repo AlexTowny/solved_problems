@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+const double PI = acos(-1);
+
+int main() {
+	double c,a,S,P,b,al;
+	cout << "Enter hypotenuse:\n";
+	cin >> c ;
+	cout << "Enter angle:\n";
+	cin >> al;
+	a = c * sin(al*PI/180);
+	b = c * cos(al*PI/180);
+
+	P = a + b + c;
+	S = a * b / 2.;
+
+	cout << fixed << setprecision(3) <<"Perimeter: " << P <<  "\n" << "Area size: " << S;
+	return 0;
+}
