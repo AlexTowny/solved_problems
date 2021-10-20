@@ -1,0 +1,19 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+
+
+int main()
+{
+	const double e = 1e-9;
+	double a,b,x,c,d,h;
+
+	cin >> a >> b;
+	cin >> c >> d >> h;
+
+	for (x = c; x-d < e; x+=h )
+		cout << fixed << setprecision(6) << x << ' ' << a*pow(x,3) + b/(x-1.0) << '\n';
+    return 0;
+}
