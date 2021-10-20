@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+
+int main()
+{
+
+	int n,a;
+	int min1 = 1e9;
+	int min2 = min1;
+	cin >> n;
+	for (int i = 0; i<n; i++){
+		cin >> a;
+		if(a > 0){
+			if (a < min1)
+				min1 = a;
+			else if (a < min2)
+				min2 = a;
+		}
+	}
+	cout << min1 << endl << min2;
+    return 0;
+}
