@@ -4,11 +4,11 @@
 #include <string>
 
 using namespace std;
-
+const double e = 1e-9;
 double func(double x){
-	if(x<0)
+	if(x<0-e)
 		return 0.2*pow(x,2) - x - 0.1;
-	else if(x == 0.1)
+	else if(x- 0.1<e)
 		return 0;
 	else
 		return pow(x,2)/(x - 0.1);
@@ -23,7 +23,7 @@ int main() {
   cin >> a >> b >> h;
   cout << 'x' << " | " << "f(x)" << '\n';
   cout << "-------------------------\n";
-  for (double i = a; i <= b; i+=h){
+  for (double i = a; i<b+e; i+=h){
 	  cout << fixed << i << " | " << func(i) << '\n';
   }
   cout << "-------------------------";
