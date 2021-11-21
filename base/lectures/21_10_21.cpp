@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
 
 using namespace std;
 
@@ -8,7 +9,8 @@ int main() {
 
 	string st = "мы учимся дистанционно";
 
-	cout << "1. " << st.length() << '\n';
+	cout << "1. " << (st.length()-count(st.begin(), st.end(), ' '))/2 + \
+			         count(st.begin(), st.end(), ' ')<< ' ' << st << '\n';
 	cout << "2. " << st.find("и") << '\n';
 	cout << "3. " << st.find("и",7) << '\n';
 	cout << "4. " << st.rfind("и") << '\n';
