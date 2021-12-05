@@ -12,15 +12,15 @@ int main() {
 
   double ans = 0,last = 0;
   double e;
-  int i = 1;
+  double flag_t = 3;
   cin >> e;
 
   for(;;){
-	  ans += 1 / sqrt(pow(3,i));
+	  ans += 1 / sqrt(flag_t);
 	  if (abs(last-ans)<e)
 		  break;
 	  last = ans;
-	  i++;
+	  flag_t *= 3;
   }
   cout << fixed << setprecision(12) << ans;
   return 0;
