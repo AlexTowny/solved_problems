@@ -12,9 +12,11 @@ int main() {
 
   double ans = 0;
   int k;
+  double one_m = 1;
   cin >> k;
   for (int n=1; n < k+1; n++){
-	  ans += pow(-1,n+1)/pow(n,2);
+	  ans += one_m/(n*n);
+	  one_m *= -1;
   }
   cout << fixed << setprecision(6) << ans;
   return 0;
