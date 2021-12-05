@@ -7,6 +7,10 @@ using namespace std;
 
 const double e = 1e-12;
 
+double calc(double x, double i, double &sum_x){
+	sum_x *= i*2+1;
+	return x/sum_x;
+}
 
 int main() {
 
@@ -29,8 +33,9 @@ int main() {
 	  ans = 1;
 	  last = 0;
 	  for(;;){
-		  sum_m *= i*2+1;
-		  ans += x / sum_m;
+
+		  ans += calc(x, i, sum_m);
+
 		  if (abs(last-ans)<e)
 			  break;
 		  last = ans;
