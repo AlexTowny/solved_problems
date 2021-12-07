@@ -10,9 +10,9 @@ int main() {
   double ans = 0;
   int n;
   cin >> n;
-  double** m = new double*[n];
+  int** m = new int*[n];
   for (int i = 0; i<n; i++)
-	  m[i] = new double[n];
+	  m[i] = new int[n];
 
   for (int i = 0; i<n; i++)
 	  for(int j = 0; j<n; j++)
