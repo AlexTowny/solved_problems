@@ -7,12 +7,14 @@ using namespace std;
 
 int main() {
 
-	int m[10];
+	
 	int n,d;
 
 	int ans;
-
+	
 	cin >> n;
+	int* m = new int[n];
+	
 	for (int i = 0; i<n;i++)
 		cin >> m[i];
 
