@@ -7,22 +7,46 @@ using namespace std;
 
 int main() {
 
-  int ans = 0;
-  const int l=5, w=5;
-  int m[5][5] = {{1,2,3,4,5},
-		  	     {1,2,3,4,5},
-			     {1,2,3,4,5},
-			     {1,2,3,4,5},
-			     {1,2,3,4,5}};
+  double ans = 0;
+  int n;
+  cin >> n;
+  double** m = new double*[n];
+  for (int i = 0; i<n; i++)
+	  m[i] = new double[n];
 
-  for (int i=0; i<l;i++){
+  for (int i = 0; i<n; i++)
+	  for(int j = 0; j<n; j++)
+		cin >> m[i][j];
 
-	  for(int j = w-1; j>w-i-1; j--)
+  for (int i=0; i<n;i++)
+	for(int j = n-1; j>n-i-1; j--)
 		  ans += m[i][j];
 
-  }
 
-  cout << fixed << setprecision(6) << ans/((l*w-l)/2);
-  //4
+
+  cout << fixed << setprecision(6) << ans/((n*(n-1))/2);
+
   return 0;
 }
+/*
+4
+1 2 3 4
+1 2 3 4
+1 2 3 4
+1 2 3 4
+3.333333
+-----------
+6
+1 1 1 1 1 1
+1 1 1 1 1 1
+1 1 1 1 1 1
+1 1 1 1 1 1
+1 1 1 1 1 1
+1 1 1 1 1 1
+1
+-----------
+3
+100000 10000 10000000
+10000000 1000000 100000
+1 1 1
+*/
