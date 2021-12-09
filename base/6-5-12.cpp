@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <iomanip>
 #include <cmath>
@@ -15,8 +14,10 @@ void delate_idx(int* &a, int &k, int idx){
 void delate_repeat(int &k, int* &a){
 	for (int i = 0; i < k; i++)
 		for (int j = i+1; j < k; j++)
-			if (a[i]==a[j])
+			if (a[i]==a[j]){
 				delate_idx(a, k, j);
+			j--;
+			}
 
 }
 
