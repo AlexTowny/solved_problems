@@ -31,12 +31,9 @@ int main(){
 Max strings length: 88
 Max string: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 -------------
-aaaa alcla flf gog
-
-aaaa alcla flf gog
-
+Max strings length: 51
+Max string:    Spring's honied cud of youthful thought he loves
 -------------
-Corn 141 cool 1955 wiNd wo1k 1o1 Did
-
-141 1o1 did
+Max strings length: 44
+Max string: FJFJESA;KJDNFSFEFJ;BWE  WEIJEI;F  WEOIJFWOI 
   */
