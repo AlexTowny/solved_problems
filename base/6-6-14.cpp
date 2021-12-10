@@ -18,6 +18,19 @@ void delate_col(int** &a, int &n, int &m , int idx){
 			a[i][j] = a[i][j+1];
 	m--;
 }
+void show_array(int** m, int row, int col){
+	for(int i = 0; i< row; i++, cout<<'\n')
+		for(int j = 0; j< col; j++, cout<<' ')
+			cout << setw(4) << m[i][j];
+}
+
+void deleteArray(int **&table, int n, int m)
+{
+	for (int i = 0; i < n; i++)
+		delete[] table[i];
+	delete[] table;
+	table = nullptr;
+}
 
 
 int main() {
@@ -33,7 +46,7 @@ int main() {
 	for (int i = 0; i < n; i++)
 		for (int j = 0; j < m; j++)
 			cin >> a[i][j];
-
+	show_array(a,n,m);
 	if(n==m){
 		bool flag = true;
 		for (int i = 0; i < n; i++)
@@ -50,6 +63,7 @@ int main() {
 	for (int i = 0; i < n; i++, cout << '\n')
 			for (int j = 0; j < m; j++)
 				cout << a[i][j] <<' ';
+	deleteArray(a,n,m);
   return 0;
 }
 /*
