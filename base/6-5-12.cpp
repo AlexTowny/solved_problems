@@ -34,6 +34,7 @@ int main() {
 
 	for (int i = 0; i < n; i++, cout << ' ')
 			cout << m[i];
+	delete[] m;
   return 0;
 }
 /*
