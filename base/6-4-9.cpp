@@ -5,7 +5,19 @@
 
 
 using namespace std;
+void show_array(int** m, int row, int col){
+	for(int i = 0; i< row; i++, cout<<'\n')
+		for(int j = 0; j< col; j++, cout<<' ')
+			cout << setw(4) << m[i][j];
+}
 
+void deleteArray(int **&table, int n, int m)
+{
+	for (int i = 0; i < n; i++)
+		delete[] table[i];
+	delete[] table;
+	table = nullptr;
+}
 int main() {
 
 	int n,d;
@@ -22,15 +34,15 @@ int main() {
 	for (int i = 0; i<n; i++)
 		for (int j = 0; j<n; j++)
 			cin >> m[i][j];
-
+	show_array(m,n,n)
 
 	for (int i = 0; i<n; i++)
 		for (int j = 0; j<n; j++)
 			ans[i] += ((m[i][j]>d)?(1):(0));
-
+	deleteArray(m,n,n);
 	for (int i = 0; i<n; i++, cout << ' ')
 		cout << ans[i];
-
+	delete[] ans;
   return 0;
 }
 /*
