@@ -5,6 +5,12 @@
 
 using namespace std;
 
+void show_array(int** m, int row, int col){
+	for(int i = 0; i< row; i++, cout<<'\n')
+		for(int j = 0; j< col; j++, cout<<' ')
+			cout << setw(4) << m[i][j];
+}
+
 int main() {
 
   double ans = 0;
@@ -18,6 +24,12 @@ int main() {
 	  for(int j = 0; j<n; j++)
 		cin >> m[i][j];
 
+  show_array(m,n,n);
+
+  if(n==1){
+	  cout << "Subdiagonal doesn't exist.";
+	  return 0;
+  }
   for (int i=0; i<n;i++)
 	for(int j = n-1; j>n-i-1; j--)
 		  ans += m[i][j];
