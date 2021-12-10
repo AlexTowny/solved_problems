@@ -25,7 +25,7 @@ int main() {
 	for (int i = 1; i<n; i++){
 		ans += ((abs(m[i-1]-m[i])-d<eps)?(1):(0));
 	}
-
+	delete[] m;
 	cout << ans;
 
   return 0;
