@@ -20,6 +20,7 @@ int main() {
   for(int i = 0; i<n; i++)
 	  if (m[i]%7!=0)
 		  cout << i+1 << ' ';
+  delete[] m;
   return 0;
 }
 /*
