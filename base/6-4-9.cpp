@@ -34,7 +34,7 @@ int main() {
 	for (int i = 0; i<n; i++)
 		for (int j = 0; j<n; j++)
 			cin >> m[i][j];
-	show_array(m,n,n)
+	show_array(m,n,n);
 
 	for (int i = 0; i<n; i++)
 		for (int j = 0; j<n; j++)
