@@ -5,6 +5,19 @@
 
 
 using namespace std;
+void show_array(int** m, int row, int col){
+	for(int i = 0; i< row; i++, cout<<'\n')
+		for(int j = 0; j< col; j++, cout<<' ')
+			cout << setw(4) << m[i][j];
+}
+
+void deleteArray(int **&table, int n, int m)
+{
+	for (int i = 0; i < n; i++)
+		delete[] table[i];
+	delete[] table;
+	table = nullptr;
+}
 
 int main() {
 
@@ -21,11 +34,12 @@ int main() {
 	  for(int j = 0; j<m; j++)
 		  cin >> a[i][j];
 
-
+  show_array(a,n,m);
   for(int i = 0; i<n; i++)
 	  for(int j = 0; j<m; j++)
 	  if (a[i][j]%7!=0)
 		  cout << '(' << i+1 << ',' << j+1 << ") ";
+  deleteArray(a,n,m);
   return 0;
 }
 /*
