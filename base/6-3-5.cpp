@@ -11,6 +11,14 @@ void show_array(int** m, int row, int col){
 			cout << setw(4) << m[i][j];
 }
 
+void deleteArray(int **&table, int n, int m)
+{
+	for (int i = 0; i < n; i++)
+		delete[] table[i];
+	delete[] table;
+	table = nullptr;
+}
+
 int main() {
 
   double ans = 0;
@@ -35,7 +43,7 @@ int main() {
 		  ans += m[i][j];
 
 
-
+  deleteArray(m,n,n);
   cout << fixed << setprecision(6) << ans/((n*(n-1))/2);
 
   return 0;
