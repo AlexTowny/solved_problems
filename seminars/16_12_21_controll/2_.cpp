@@ -14,9 +14,10 @@ int main() {
 
 	cout << "Indexes of double-digit numbers(Numbering start from 0):";
 	for(int i = 0; i< n; i++)
-		if(a[i]>9 && a[i]<100)
+		if(abs(a[i])>9 && abs(a[i])<100)
 			cout << i << ' ';
 	delete [] a;
+	a = nullptr;
 	return 0;
 }
 
