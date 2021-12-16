@@ -16,7 +16,7 @@ int main() {
 	for(int i = 0; i< n; i++)
 		if(a[i]>9 && a[i]<100)
 			cout << i << ' ';
-
+	delete [] a;
 	return 0;
 }
 
