@@ -16,6 +16,9 @@ struct line2d{
 	double length(){
 		return sqrt(pow(a.x-b.x,2)+pow(a.y-b.y,2));
 	}
+	bool match(){
+		return ((a.x == b.x)&&(a.y == b.y));
+	}
 };
 
 int main() {
@@ -38,10 +41,6 @@ int main() {
 	for(int i = 0; i<n; i++)
 		for(int j = i+1; j<n; j++)
 			for(int k = j+1; k<n; k++){
-				if(points[i] == points[j] ||
-				   points[j] == points[k] ||
-				   points[k] == points[i])
-					continue;
 				line2d a;
 				a.a = points[i];
 				a.b = points[j];
@@ -51,33 +50,30 @@ int main() {
 				line2d c;
 				c.a = points[k];
 				c.b = points[i];
+
+				if(a.match() ||
+				   b.match() ||
+				   c.match())
+				     continue;
+
 				double loc_p = a.length()+b.length()+c.length();
-				if(!flag&& loc_p > 0+eps ){
+				if(!flag && loc_p > 0+eps ){
 					min_p = loc_p;
 					ans[0] = a.a;
 					ans[1] = b.a;
 					ans[2] = c.a;
 					flag = true;}
-				else if(loc_p < min_p-eps && loc_p > 0+eps){
+				else if(flag && loc_p < min_p+eps && loc_p > 0+eps){
 					min_p = loc_p;
 					ans[0] = a.a;
 					ans[1] = b.a;
 					ans[2] = c.a;
 				}
 			}
-
-	for(int i = 0; i<3; i++)
-		cout << '(' << ans[i].x << ',' << ans[i].y << ')' << '\n';
+	if(flag)
+		for(int i = 0; i<3; i++)
+			cout << '(' << ans[i].x << ',' << ans[i].y << ')' << '\n';
+	else
+		cout << "All triangles are bad.";
     return 0;
 }
-/*
-9
-0 0
-0 1
-1 0
-1 1
-0 2
-2 0
-2 2
-2 1
-1 2*/
